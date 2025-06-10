@@ -58,8 +58,10 @@
 
 有Gamma：
 
-![image-20250605120000949](C:\Users\SOF\Desktop\OpenGL笔记\assets\image-20250605120000949.png)
+![image-20250607100950354](C:\Users\SOF\Desktop\OpenGL笔记\assets\image-20250607100950354.png)
 
 无Gamma：
 
-![image-20250605120014366](C:\Users\SOF\Desktop\OpenGL笔记\assets\image-20250605120014366.png)
+![image-20250607100936146](C:\Users\SOF\Desktop\OpenGL笔记\assets\image-20250607100936146.png)
+
+这种差异产生的原因是，光的衰减方程改变了亮度值，而且屏幕上显示出来的也不是线性空间，在显示器上效果最好的衰减方程，并不是符合物理的。想想平方衰减方程，如果我们使用这个方程，而且不进行gamma校正，显示在监视器上的衰减方程实际上将变成(1.0/distance2)2.2(1.0/distance2)2.2。若不进行gamma校正，将产生更强烈的衰减。这也解释了为什么双曲线不用gamma校正时看起来更真实，因为它实际变成了(1.0/distance)2.2=1.0/distance2.2(1.0/distance)2.2=1.0/distance2.2。这和物理公式是很相似的。
